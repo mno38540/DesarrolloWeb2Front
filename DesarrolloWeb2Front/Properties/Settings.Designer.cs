@@ -32,5 +32,25 @@ namespace DesarrolloWeb2Front.Properties {
                 return ((string)(this["DesarrolloWeb2Front_HobbiesWS_HobbieWS"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44384/WebServices/EstudianteWS.asmx")]
+        public string DesarrolloWeb2Front_EstusianteWS_EstudianteWS {
+            get {
+                return ((string)(this["DesarrolloWeb2Front_EstusianteWS_EstudianteWS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44384/WebServices/EstudianteHobbieWS.asmx")]
+        public string DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS {
+            get {
+                return ((string)(this["DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS"]));
+            }
+        }
     }
 }

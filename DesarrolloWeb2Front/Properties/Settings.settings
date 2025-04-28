@@ -5,5 +5,11 @@
     <Setting Name="DesarrolloWeb2Front_HobbiesWS_HobbieWS" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://localhost:44384/WebServices/HobbieWS.asmx</Value>
     </Setting>
+    <Setting Name="DesarrolloWeb2Front_EstusianteWS_EstudianteWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44384/WebServices/EstudianteWS.asmx</Value>
+    </Setting>
+    <Setting Name="DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44384/WebServices/EstudianteHobbieWS.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

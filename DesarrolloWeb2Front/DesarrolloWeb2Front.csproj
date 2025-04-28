@@ -68,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebForms\EstudianteAll.aspx" />
+    <Content Include="WebForms\EstudianteHobbies.aspx" />
+    <Content Include="WebForms\EstusiantesById.aspx" />
     <Content Include="WebForms\HobbiesByCode.aspx" />
     <Content Include="WebForms\HobbiesFront.aspx" />
   </ItemGroup>
@@ -78,10 +81,41 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Web References\EstusianteHobbies\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\EstusianteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\HobbiesWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\EstudianteAll.aspx.cs">
+      <DependentUpon>EstudianteAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\EstudianteAll.aspx.designer.cs">
+      <DependentUpon>EstudianteAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\EstudianteHobbies.aspx.cs">
+      <DependentUpon>EstudianteHobbies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\EstudianteHobbies.aspx.designer.cs">
+      <DependentUpon>EstudianteHobbies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\EstusiantesById.aspx.cs">
+      <DependentUpon>EstusiantesById.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\EstusiantesById.aspx.designer.cs">
+      <DependentUpon>EstusiantesById.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForms\HobbiesByCode.aspx.cs">
       <DependentUpon>HobbiesByCode.aspx</DependentUpon>
@@ -107,6 +141,22 @@
     <Content Include="Web References\HobbiesWS\HobbiesDto.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <Content Include="Web References\EstusianteWS\EstudianteDto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\EstusianteHobbies\EstudianteHobbieDto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\EstusianteHobbies\EstudianteHobbieWS.wsdl" />
+    <Content Include="Web References\EstusianteHobbies\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\EstusianteWS\EstudianteWS.wsdl" />
+    <Content Include="Web References\EstusianteWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\HobbiesWS\HobbieWS.wsdl" />
     <Content Include="Web References\HobbiesWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -126,6 +176,28 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="https://localhost:44384/WebServices/EstudianteHobbieWS.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EstusianteHobbies\</RelPath>
+      <UpdateFromURL>https://localhost:44384/WebServices/EstudianteHobbieWS.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44384/WebServices/EstudianteWS.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EstusianteWS\</RelPath>
+      <UpdateFromURL>https://localhost:44384/WebServices/EstudianteWS.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DesarrolloWeb2Front_EstusianteWS_EstudianteWS</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="https://localhost:44384/WebServices/HobbieWS.asmx%3fWSDL">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\HobbiesWS\</RelPath>
