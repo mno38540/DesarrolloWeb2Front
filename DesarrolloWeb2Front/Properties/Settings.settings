@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DesarrolloWeb2Front.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DesarrolloWeb2Front_HobbiesWS_HobbieWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44384/WebServices/HobbieWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

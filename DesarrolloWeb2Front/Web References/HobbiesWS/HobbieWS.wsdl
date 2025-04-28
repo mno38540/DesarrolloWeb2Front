@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HobbiesGetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="HobbiesGetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HobbiesGetAllResult" type="tns:ArrayOfHobbiesDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHobbiesDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HobbiesDto" nillable="true" type="tns:HobbiesDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HobbiesDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HobbiesGetByIdl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HobbiesGetByIdlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HobbiesGetByIdlResult" type="tns:HobbiesDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HobbiesGetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:HobbiesGetAll" />
+  </wsdl:message>
+  <wsdl:message name="HobbiesGetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:HobbiesGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="HobbiesGetByIdlSoapIn">
+    <wsdl:part name="parameters" element="tns:HobbiesGetByIdl" />
+  </wsdl:message>
+  <wsdl:message name="HobbiesGetByIdlSoapOut">
+    <wsdl:part name="parameters" element="tns:HobbiesGetByIdlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HobbieWSSoap">
+    <wsdl:operation name="HobbiesGetAll">
+      <wsdl:input message="tns:HobbiesGetAllSoapIn" />
+      <wsdl:output message="tns:HobbiesGetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HobbiesGetByIdl">
+      <wsdl:input message="tns:HobbiesGetByIdlSoapIn" />
+      <wsdl:output message="tns:HobbiesGetByIdlSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HobbieWSSoap" type="tns:HobbieWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HobbiesGetAll">
+      <soap:operation soapAction="http://tempuri.org/HobbiesGetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HobbiesGetByIdl">
+      <soap:operation soapAction="http://tempuri.org/HobbiesGetByIdl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HobbieWSSoap12" type="tns:HobbieWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HobbiesGetAll">
+      <soap12:operation soapAction="http://tempuri.org/HobbiesGetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HobbiesGetByIdl">
+      <soap12:operation soapAction="http://tempuri.org/HobbiesGetByIdl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HobbieWS">
+    <wsdl:port name="HobbieWSSoap" binding="tns:HobbieWSSoap">
+      <soap:address location="https://localhost:44384/WebServices/HobbieWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HobbieWSSoap12" binding="tns:HobbieWSSoap12">
+      <soap12:address location="https://localhost:44384/WebServices/HobbieWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
