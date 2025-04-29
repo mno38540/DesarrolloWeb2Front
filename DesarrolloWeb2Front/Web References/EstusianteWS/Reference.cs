@@ -35,6 +35,10 @@ namespace DesarrolloWeb2Front.EstusianteWS {
         
         private System.Threading.SendOrPostCallback StudentUpdateOperationCompleted;
         
+        private System.Threading.SendOrPostCallback StudentDeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback StudentCreateOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -81,6 +85,12 @@ namespace DesarrolloWeb2Front.EstusianteWS {
         
         /// <remarks/>
         public event StudentUpdateCompletedEventHandler StudentUpdateCompleted;
+        
+        /// <remarks/>
+        public event StudentDeleteCompletedEventHandler StudentDeleteCompleted;
+        
+        /// <remarks/>
+        public event StudentCreateCompletedEventHandler StudentCreateCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllStuden", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -172,6 +182,72 @@ namespace DesarrolloWeb2Front.EstusianteWS {
             if ((this.StudentUpdateCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.StudentUpdateCompleted(this, new StudentUpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/StudentDelete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string StudentDelete(string identificacion) {
+            object[] results = this.Invoke("StudentDelete", new object[] {
+                        identificacion});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void StudentDeleteAsync(string identificacion) {
+            this.StudentDeleteAsync(identificacion, null);
+        }
+        
+        /// <remarks/>
+        public void StudentDeleteAsync(string identificacion, object userState) {
+            if ((this.StudentDeleteOperationCompleted == null)) {
+                this.StudentDeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnStudentDeleteOperationCompleted);
+            }
+            this.InvokeAsync("StudentDelete", new object[] {
+                        identificacion}, this.StudentDeleteOperationCompleted, userState);
+        }
+        
+        private void OnStudentDeleteOperationCompleted(object arg) {
+            if ((this.StudentDeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.StudentDeleteCompleted(this, new StudentDeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/StudentCreate", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string StudentCreate(string identificacion, string nombre, string Apellido, string direccion, string telefono) {
+            object[] results = this.Invoke("StudentCreate", new object[] {
+                        identificacion,
+                        nombre,
+                        Apellido,
+                        direccion,
+                        telefono});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void StudentCreateAsync(string identificacion, string nombre, string Apellido, string direccion, string telefono) {
+            this.StudentCreateAsync(identificacion, nombre, Apellido, direccion, telefono, null);
+        }
+        
+        /// <remarks/>
+        public void StudentCreateAsync(string identificacion, string nombre, string Apellido, string direccion, string telefono, object userState) {
+            if ((this.StudentCreateOperationCompleted == null)) {
+                this.StudentCreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnStudentCreateOperationCompleted);
+            }
+            this.InvokeAsync("StudentCreate", new object[] {
+                        identificacion,
+                        nombre,
+                        Apellido,
+                        direccion,
+                        telefono}, this.StudentCreateOperationCompleted, userState);
+        }
+        
+        private void OnStudentCreateOperationCompleted(object arg) {
+            if ((this.StudentCreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.StudentCreateCompleted(this, new StudentCreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -328,6 +404,58 @@ namespace DesarrolloWeb2Front.EstusianteWS {
         private object[] results;
         
         internal StudentUpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void StudentDeleteCompletedEventHandler(object sender, StudentDeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class StudentDeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal StudentDeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void StudentCreateCompletedEventHandler(object sender, StudentCreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class StudentCreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal StudentCreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

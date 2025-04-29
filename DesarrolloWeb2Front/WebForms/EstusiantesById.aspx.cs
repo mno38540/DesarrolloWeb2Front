@@ -31,5 +31,17 @@ namespace DesarrolloWeb2Front.WebForms
             EstusianteWS.EstudianteWS estudianteWS = new EstusianteWS.EstudianteWS();
             var actualizacion = estudianteWS.StudentUpdate(TextBox6.Text, TextBox2.Text, TextBox3.Text,TextBox4.Text,TextBox5.Text);
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            EstusianteWS.EstudianteWS estudianteWS = new EstusianteWS.EstudianteWS();
+            var eliminar = estudianteWS.StudentDelete(TextBox6.Text);
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            EstusianteWS.EstudianteWS estudianteWS = new EstusianteWS.EstudianteWS();
+            var actualizacion = estudianteWS.StudentCreate(TextBox6.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text);
+        }
     }
 }

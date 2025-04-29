@@ -16,6 +16,10 @@
             <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Actualizar" />
+&nbsp;&nbsp;
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Eliminar" />
+&nbsp;
+            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Crear" />
             <br />
             Identificacion<br />
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
