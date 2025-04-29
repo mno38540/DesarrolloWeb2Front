@@ -47,9 +47,9 @@ namespace DesarrolloWeb2Front.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44384/WebServices/EstudianteHobbieWS.asmx")]
-        public string DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS {
+        public string DesarrolloWeb2Front_EstudianteHo_EstudianteHobbieWS {
             get {
-                return ((string)(this["DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS"]));
+                return ((string)(this["DesarrolloWeb2Front_EstudianteHo_EstudianteHobbieWS"]));
             }
         }
     }

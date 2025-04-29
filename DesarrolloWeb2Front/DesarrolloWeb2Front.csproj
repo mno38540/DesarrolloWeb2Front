@@ -81,7 +81,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\EstusianteHobbies\Reference.cs">
+    <Compile Include="Web References\EstudianteHo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -144,11 +144,11 @@
     <Content Include="Web References\EstusianteWS\EstudianteDto.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\EstusianteHobbies\EstudianteHobbieDto.datasource">
+    <Content Include="Web References\EstudianteHo\EstudianteHobbieDto.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <None Include="Web References\EstusianteHobbies\EstudianteHobbieWS.wsdl" />
-    <Content Include="Web References\EstusianteHobbies\Reference.map">
+    <None Include="Web References\EstudianteHo\EstudianteHobbieWS.wsdl" />
+    <Content Include="Web References\EstudianteHo\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
@@ -178,14 +178,14 @@
   <ItemGroup>
     <WebReferenceUrl Include="https://localhost:44384/WebServices/EstudianteHobbieWS.asmx%3fWSDL">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\EstusianteHobbies\</RelPath>
+      <RelPath>Web References\EstudianteHo\</RelPath>
       <UpdateFromURL>https://localhost:44384/WebServices/EstudianteHobbieWS.asmx%3fWSDL</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS</CachedSettingsPropName>
+      <CachedSettingsPropName>DesarrolloWeb2Front_EstudianteHo_EstudianteHobbieWS</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="https://localhost:44384/WebServices/EstudianteWS.asmx%3fWSDL">
       <UrlBehavior>Dynamic</UrlBehavior>

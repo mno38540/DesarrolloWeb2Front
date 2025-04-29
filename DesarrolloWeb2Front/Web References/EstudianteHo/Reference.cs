@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace DesarrolloWeb2Front.EstusianteHobbies {
+namespace DesarrolloWeb2Front.EstudianteHo {
     using System.Diagnostics;
     using System;
     using System.Xml.Serialization;
@@ -35,7 +35,7 @@ namespace DesarrolloWeb2Front.EstusianteHobbies {
         
         /// <remarks/>
         public EstudianteHobbieWS() {
-            this.Url = global::DesarrolloWeb2Front.Properties.Settings.Default.DesarrolloWeb2Front_EstusianteHobbies_EstudianteHobbieWS;
+            this.Url = global::DesarrolloWeb2Front.Properties.Settings.Default.DesarrolloWeb2Front_EstudianteHo_EstudianteHobbieWS;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
