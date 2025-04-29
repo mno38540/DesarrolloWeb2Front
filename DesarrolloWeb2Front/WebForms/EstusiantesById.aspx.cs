@@ -24,8 +24,12 @@ namespace DesarrolloWeb2Front.WebForms
             TextBox3.Text = resulEstudiante.Apellido;
             TextBox4.Text = resulEstudiante.Direccion;
             TextBox5.Text = resulEstudiante.Telefono;
+        }
 
-
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            EstusianteWS.EstudianteWS estudianteWS = new EstusianteWS.EstudianteWS();
+            var actualizacion = estudianteWS.StudentUpdate(TextBox6.Text, TextBox2.Text, TextBox3.Text,TextBox4.Text,TextBox5.Text);
         }
     }
 }

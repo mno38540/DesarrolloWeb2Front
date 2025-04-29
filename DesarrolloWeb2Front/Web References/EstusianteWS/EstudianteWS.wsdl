@@ -40,6 +40,24 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="StudentUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StudentUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StudentUpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetAllStudenSoapIn">
@@ -54,6 +72,12 @@
   <wsdl:message name="StudentByIdSoapOut">
     <wsdl:part name="parameters" element="tns:StudentByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="StudentUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:StudentUpdate" />
+  </wsdl:message>
+  <wsdl:message name="StudentUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:StudentUpdateResponse" />
+  </wsdl:message>
   <wsdl:portType name="EstudianteWSSoap">
     <wsdl:operation name="GetAllStuden">
       <wsdl:input message="tns:GetAllStudenSoapIn" />
@@ -62,6 +86,10 @@
     <wsdl:operation name="StudentById">
       <wsdl:input message="tns:StudentByIdSoapIn" />
       <wsdl:output message="tns:StudentByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentUpdate">
+      <wsdl:input message="tns:StudentUpdateSoapIn" />
+      <wsdl:output message="tns:StudentUpdateSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EstudianteWSSoap" type="tns:EstudianteWSSoap">
@@ -84,6 +112,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="StudentUpdate">
+      <soap:operation soapAction="http://tempuri.org/StudentUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EstudianteWSSoap12" type="tns:EstudianteWSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -98,6 +135,15 @@
     </wsdl:operation>
     <wsdl:operation name="StudentById">
       <soap12:operation soapAction="http://tempuri.org/StudentById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentUpdate">
+      <soap12:operation soapAction="http://tempuri.org/StudentUpdate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -33,6 +33,8 @@ namespace DesarrolloWeb2Front.EstusianteWS {
         
         private System.Threading.SendOrPostCallback StudentByIdOperationCompleted;
         
+        private System.Threading.SendOrPostCallback StudentUpdateOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -76,6 +78,9 @@ namespace DesarrolloWeb2Front.EstusianteWS {
         
         /// <remarks/>
         public event StudentByIdCompletedEventHandler StudentByIdCompleted;
+        
+        /// <remarks/>
+        public event StudentUpdateCompletedEventHandler StudentUpdateCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllStuden", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -130,6 +135,43 @@ namespace DesarrolloWeb2Front.EstusianteWS {
             if ((this.StudentByIdCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.StudentByIdCompleted(this, new StudentByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/StudentUpdate", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string StudentUpdate(string identificacion, string nombre, string Apellido, string direccion, string telefono) {
+            object[] results = this.Invoke("StudentUpdate", new object[] {
+                        identificacion,
+                        nombre,
+                        Apellido,
+                        direccion,
+                        telefono});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void StudentUpdateAsync(string identificacion, string nombre, string Apellido, string direccion, string telefono) {
+            this.StudentUpdateAsync(identificacion, nombre, Apellido, direccion, telefono, null);
+        }
+        
+        /// <remarks/>
+        public void StudentUpdateAsync(string identificacion, string nombre, string Apellido, string direccion, string telefono, object userState) {
+            if ((this.StudentUpdateOperationCompleted == null)) {
+                this.StudentUpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnStudentUpdateOperationCompleted);
+            }
+            this.InvokeAsync("StudentUpdate", new object[] {
+                        identificacion,
+                        nombre,
+                        Apellido,
+                        direccion,
+                        telefono}, this.StudentUpdateOperationCompleted, userState);
+        }
+        
+        private void OnStudentUpdateOperationCompleted(object arg) {
+            if ((this.StudentUpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.StudentUpdateCompleted(this, new StudentUpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -269,6 +311,32 @@ namespace DesarrolloWeb2Front.EstusianteWS {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((EstudianteDto)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void StudentUpdateCompletedEventHandler(object sender, StudentUpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class StudentUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal StudentUpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

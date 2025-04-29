@@ -153,10 +153,10 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <None Include="Web References\EstusianteWS\EstudianteWS.wsdl" />
-    <Content Include="Web References\EstusianteWS\Reference.map">
+    <None Include="Web References\EstusianteWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\HobbiesWS\HobbieWS.wsdl" />
     <Content Include="Web References\HobbiesWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
